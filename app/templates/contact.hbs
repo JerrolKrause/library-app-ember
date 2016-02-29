@@ -1,0 +1,16 @@
+<h1>Contact</h1>
+
+<form {{action 'submit' on="submit"}}> 
+	<p>{{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}</p>
+	<p>{{textarea value=message class="form-control" placeholder="Your message. (At least 5 characters.)" autofocus="autofocus" rows="7"}}</p>
+	<p><button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} >Leave Feedback</button></p>
+</form>
+
+	{{#if hasResponse}}
+		<div class="alert alert-success">
+			<p>Thanks for submitting the form, no really!</p>
+			<p>Your submission:<br/>
+			{{{hasResponse}}}</p>
+		</div>
+	{{/if}}
+{{outlet}}
