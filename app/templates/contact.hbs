@@ -1,15 +1,23 @@
 <h1>Contact</h1>
 
-{{#if hasResponse}}
+<p class="well well-sm">If you have any question or feedback please leave a message with your email address.</p>
+
+<div class="row">
+    <div class="col-md-6">
+
+{{#if model.hasResponse}}
 		<div class="alert alert-success">
 			<p>Thanks for submitting the form, no really!</p>
 			<p>Your submission:<br/>
-			{{{hasResponse}}}</p>
+			{{{model.outputResponse}}}</p>
 		</div>
 {{/if}}
 
 <form {{action 'submit' model on="submit"}}> 
 	<p>{{input type="model.email" value=model.email class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}</p>
 	<p>{{textarea value=model.message class="form-control" placeholder="Your message. (At least 5 characters.)" autofocus="autofocus" rows="7"}}</p>
-	<p><button class="btn btn-primary btn-lg btn-block" disabled={{model.isDisabled}} >Leave Feedback</button></p>
+	<p><button class="btn btn-success" disabled={{model.isDisabled}} >Send</button></p>
 </form>
+
+</div>
+</div>

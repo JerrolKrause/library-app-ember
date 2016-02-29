@@ -12,6 +12,11 @@ export default DS.Model.extend({
 	//Checks if the textarea has at least 5 characters typed
 	validMessage	: Ember.computed.gte('message.length', 5),
 	//Checks if both a valid email and a valid message are valid
-	isDisabled		: Ember.computed.not('validMessage', 'validEmail')
+	isDisabled		: Ember.computed.not('validMessage', 'validEmail'),
+
+	//Remember the user's email and message to output in the response text
+	outputResponse   : Ember.computed('email','message', function(){
+		return this.get('email') + '<br/>' + this.get('message');
+	})
 
 });
