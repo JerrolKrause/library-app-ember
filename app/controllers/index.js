@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
-	headerMessage: 'Coming Soon',
-  	responseMessage: '',
+	
+	headerMessage	: 'Coming Soon',
+  	responseMessage	: '',
 	emailAddress 	: '',
 
 	//Checks if the email is valid
