@@ -44,7 +44,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/projects/library-app-ember/';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
