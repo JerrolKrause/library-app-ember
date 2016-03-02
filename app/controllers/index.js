@@ -11,6 +11,36 @@ export default Ember.Controller.extend({
 	//Disables the submit button if no content is found in the email box
 	isDisabled		: Ember.computed.empty('emailAddress'),
 
+	  init() {
+	  	console.log('init');
+  },
+
+  beforeModel(transition) {
+console.log('beforeModel');
+  },
+
+  model(params, transition) {
+console.log('model');
+  },
+
+  afterModel(model, transition) {
+console.log('afterModel');
+  },
+
+  activate() {
+console.log('activate');
+  },
+
+  setupController(controller, model) {
+console.log('setupController');
+  },
+
+  renderTemplate(controller, model) {
+console.log('renderTemplate');
+  },
+
+  
+
 	//Actions
 	actions: {
 		//Save the invitation
