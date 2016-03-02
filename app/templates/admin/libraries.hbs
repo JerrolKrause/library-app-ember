@@ -1,0 +1,27 @@
+<h1>Libraries</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    {{#each model as |library|}}
+        <tr>
+            <th>{{library.name}}</th>
+            <td>{{library.address}}</td>
+            <td>{{library.phone}}</td>
+            <td>
+            	{{#link-to 'libraries.edit' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+            	<button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+            </td>
+        </tr>
+    {{/each}}
+
+    </tbody>
+</table>
