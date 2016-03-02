@@ -7,6 +7,22 @@ export default Ember.Route.extend({
 	},
 
 
+	 //Create a controller for this route
+	  setupController: function(controller, model){
+	  	// Call _super for default behavior
+	  	this._super(controller, model);
+
+	  	//Set variables for this controller, they are used by the component
+	  	controller.set('title', 'Edit library');
+	  	controller.set('buttonLabel', 'Save Changes');
+	  },
+
+	  //Use the following template instead of the default one provided by the route
+	  renderTemplate(){
+	  	 this.render('libraries/form');
+	  },
+
+
 	actions: {
 		//Save the library and then transition to the libraries page
 	    saveLibrary(newLibrary) {
