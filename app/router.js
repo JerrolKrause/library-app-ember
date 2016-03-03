@@ -22,11 +22,19 @@ Router.map(function() {
     this.route('contact');
     this.route('seeder');
     this.route('libraries');
+    this.route('posts', function(){
+      this.route('new');
+      this.route('edit', { path: '/edit/:post_id' });
+    });
   });
 
   this.route('libraries', function() {
     this.route('new');
     this.route('edit', { path: '/:library_id/edit' });
+  });
+
+  this.route('blog', function() {
+    this.route('post', { path: '/:post_id' });
   });
 
   this.route('not-found', { path: '/*path' });

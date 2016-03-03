@@ -19,3 +19,16 @@ html {
     opacity: 1;
   }
 }
+
+
+#admin-blog-list{
+	td:first-child {
+	    width:200px;
+	}
+	td:nth-child(2) {
+	    width:95px;
+	}
+	td:nth-child(4) {
+	    width: 102px;
+	}
+}

@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+
+<div class="well">
+    <ul class="nav nav-pills">
+      {{#link-to 'admin.posts.index' tagName="li"}}<a href>List all</a>{{/link-to}}
+      {{#link-to 'admin.posts.new' tagName="li"}}<a href>Add new</a>{{/link-to}}
+    </ul>
+</div>
+
+{{blog-form item=model buttonLabel=buttonLabel action='savePost'}}

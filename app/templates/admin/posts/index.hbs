@@ -1,0 +1,36 @@
+<h1>Showing All Blog Posts</h1>
+
+<div class="well">
+    <ul class="nav nav-pills">
+      {{#link-to 'admin.posts.index' tagName="li"}}<a href>List all</a>{{/link-to}}
+      {{#link-to 'admin.posts.new' tagName="li"}}<a href>Add new</a>{{/link-to}}
+    </ul>
+</div>
+
+
+<table class="table table-bordered table-striped" id="admin-blog-list">
+    <thead>
+      <tr>
+          <th>Post Title</th>
+          <th>Post Date</th>
+          <th>Content</th>
+          <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+{{#each model as |post|}}
+        <tr>
+            <td>{{#link-to 'blog.post' post.id}}{{post.title}}{{/link-to}}</td>
+            <td>{{post.postDate}}</td>
+            <td>{{post.content}}</td>
+            <td>
+            	{{#link-to 'admin.posts.edit' post.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+            	<button class="btn btn-danger btn-xs" {{action 'deletePost' post}}>Delete</button>
+            </td>
+        </tr>
+  {{/each}}
+
+    </tbody>
+</table>
+
