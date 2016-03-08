@@ -4,7 +4,7 @@
 	{{#each model as |post|}}
 		<h2>{{#link-to 'blog.post' post.id}}{{post.title}}{{/link-to}}</h2>
 		<p>Posted on: {{post.postDate}}</p>
-		<div>{{{post.content}}}</div>
+		<div>{{post.content}}</div>
 		<hr/>
 	{{/each}}
 </div>
