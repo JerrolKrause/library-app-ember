@@ -1,0 +1,14 @@
+<p>
+Computed properties are only updated when used or changed. Observer properties are updated everytime the property is changed.<br/>
+Open console to see this in effect.
+</p>
+
+
+<form {{action "checkEmail" on="submit"}}>
+	<p>
+		{{input type="text" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+	<p>
+	</p>
+		<button class="btn">Check Email</button>
+	</p>
+</form>
